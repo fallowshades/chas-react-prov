@@ -7,9 +7,15 @@
 // react-redux och @reduxjs/toolkit redan installerat i projektet.
 // Skapa en store som använder sig av usersSlice.js och Lägg till en Provider i App-komponenten
 // nedanför.
-
+import { Provider } from 'react-redux'
+import { store } from './store'
+import UserComponent from './UserComponent'
 function App() {
-  return <div></div>;
+  return (
+    <Provider store={store}>
+      <UserComponent />
+    </Provider>
+  )
 }
 
-export default App;
+export default App

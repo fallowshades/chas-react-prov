@@ -4,9 +4,20 @@
 // räknarens värde och en för att minska den. Skriv kod i App-komponenten
 // nedanför som använder din custom hook och visar räknarens värde
 // samt två knappar för att öka och minska värdet.
-
+import { useCounter } from './useCounter'
 function App() {
-  return <div></div>;
+  const quantity = useCounter(0)
+  return (
+    <div>
+      <p>{quantity.value}</p>
+      <button type='button' onClick={quantity.increment}>
+        +
+      </button>
+      <button type='button' onClick={quantity.decrement}>
+        -
+      </button>
+    </div>
+  )
 }
 
-export default App;
+export default App
